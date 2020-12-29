@@ -18,3 +18,10 @@ C:\Users\DELL\Desktop\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.Raz
 C:\Users\DELL\Desktop\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.dll
 C:\Users\DELL\Desktop\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.pdb
 C:\Users\DELL\Desktop\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.genruntimeconfig.cache
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.dll
+C:\Users\DELL\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.pdb
