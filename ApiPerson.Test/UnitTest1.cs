@@ -25,7 +25,7 @@ namespace ApiPerson.Test
         }
 
         [Test]
-        public void TesteFindByIDChamadaUmaVezQuandoGetPossuirParametros()
+        public void TesteFindByIDChamadaUmaVezQuandoGetPossuirParametrosEPessoaDiferenteDeNull()
         {
             // arrange
             long id = 1;
@@ -37,16 +37,26 @@ namespace ApiPerson.Test
                 Address = "Lagoa da Prata",
                 Gender = "Feminino"
             };
+            _mockPersonService.Setup(mock => mock.FindByID(id)).Returns(person);
             // act 
             var response = _personController.Get(id);
             // assert
             _mockPersonService.Verify(Mock => Mock.FindByID(id), Times.Once());
+            Assert.IsInstanceOf<OkObjectResult>(response);
         }
 
         [Test]
         public void TestFindAllChamadaUmaVezQuandoGetNãoPossuirParametros()
         {
             // arrange
+            var person = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
             // act 
             _personController.Get();
             // assert

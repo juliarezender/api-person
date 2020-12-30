@@ -20,7 +20,6 @@ namespace ApiPerson.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-
             return Ok(_personService.FindAll());
         }
 
