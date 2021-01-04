@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VC7S52GbJkMhNF7Je1dkZgbHB9jFtgllvSc27/C+4W/CXvNqk8hJxLR0/xqeUKUvilI3fkJyOY/IjSs+8QvuLQ==",
+  "dgSpecHash": "B/8Sil/1KBUQbsKO93AixfbtOzUxfRMQQMvu/G4ONQYmT/lB8RthmWFYoCF8pU/UYDEVzEXhgTIWJwyyjqw3Gw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

@@ -20,7 +20,9 @@ namespace ApiPerson.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_personService.FindAll());
+            var listPerson = _personService.FindAll();
+            if (listPerson.Count == 0) return NoContent();
+            return Ok(listPerson);
         }
 
         [HttpGet("{id}")]
@@ -48,6 +50,8 @@ namespace ApiPerson.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
+            var person = _personService.FindByID(id);
+            if (person == null) return NotFound();
             _personService.Delete(id);
             return NoContent();
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x3q0CbiDNwgvZnDo3kfK4eO5eUtj0rcbSBTnBqrVjV/xx8rMhgTdT5QegPdVirlHwBKh62DMnKhIZ4+8md0veQ==",
+  "dgSpecHash": "Ftjcz9GrYuZnmSo+t0hwGn0j3b6AcB5L7hzBDZqSlyUmOLxyxzIMznXuOQIIpD3rOPne/NqZplGgkVBQULdVag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.1\\microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.1\\microsoft.entityframeworkcore.abstractions.5.0.1.nupkg.sha512",

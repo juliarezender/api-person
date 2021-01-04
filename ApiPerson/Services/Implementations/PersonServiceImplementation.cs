@@ -62,7 +62,7 @@ namespace ApiPerson.Services.Implementations
 
         public Person Update(Person person)
         {
-            if (!Exists(person.Id)) return new Person();
+            if (!Exists(person.Id)) Create(person);
 
             var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
 

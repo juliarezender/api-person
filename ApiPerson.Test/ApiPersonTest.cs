@@ -26,7 +26,7 @@ namespace ApiPerson.Test
         }
 
         [Test]
-        public void TesteFindByIDChamadaUmaVezQuandoGetPossuirParametrosEPessoaDiferenteDeNull()
+        public void TesteGetQuandoPossuirParametrosEPessoaDiferenteDeNull()
         {
             // arrange
             long id = 1;
@@ -46,7 +46,7 @@ namespace ApiPerson.Test
             Assert.IsInstanceOf<OkObjectResult>(response);
         }
         [Test]
-        public void TesteFindByIDQuandoGetPossuirParametrosEPessoaIgualANull()
+        public void TesteGetQuandoPossuirParametrosEPessoaIgualANull()
         {
             // arrange
             long id = 1;
@@ -59,7 +59,7 @@ namespace ApiPerson.Test
         }
 
         [Test]
-        public void TestFindAllChamadaUmaVezQuandoGetNãoPossuirParametros()
+        public void TestGetQuandoNãoPossuirParametrosEListaNaoVazia()
         {
             // arrange
             var listPerson = new List<Person>();
@@ -80,6 +80,18 @@ namespace ApiPerson.Test
             Assert.IsInstanceOf<OkObjectResult>(response);
         }
 
+        [Test]
+        public void TestGetQuandoNãoPossuirParametrosEListaVazia()
+        {
+            // arrange
+            var listPerson = new List<Person>();
+            _mockPersonService.Setup(mock => mock.FindAll()).Returns(listPerson);
+            // act 
+            var response = _personController.Get();
+            // assert
+            _mockPersonService.Verify(Mock => Mock.FindAll(), Times.Once());
+            Assert.IsInstanceOf<NoContentResult>(response);
+        }
         [Test]
         public void TesteCreateChamadaUmaVezQuandoUsarMetodoPost()
         {
@@ -140,15 +152,34 @@ namespace ApiPerson.Test
         }
 
         [Test]
-        public void TesteDeleteChamaUmaVezQuandoUsarMetodoDelete()
+        public void TesteMetodoDeleteQuandoIdExiste()
+        {
+            // arrange
+            long id = 1;
+            var person = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            _mockPersonService.Setup(mock => mock.FindByID(id)).Returns(person);
+            // act
+            var response = _personController.Delete(id);
+            // assert
+            _mockPersonService.Verify(mock => mock.Delete(id), Times.Once());
+            Assert.IsInstanceOf<NoContentResult>(response);
+        }
+
+        public void TesteMetodoDeleteQuandoIdNaoExiste()
         {
             // arrange
             long id = 1;
             // act
             var response = _personController.Delete(id);
             // assert
-            _mockPersonService.Verify(mock => mock.Delete(id), Times.Once());
-            Assert.IsInstanceOf<NoContentResult>(response);
+            Assert.IsInstanceOf<NotFoundResult>(response);
         }
     }
 }

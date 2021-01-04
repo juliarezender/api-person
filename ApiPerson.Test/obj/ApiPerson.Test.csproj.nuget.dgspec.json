@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {
+    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
         "projectName": "ApiPerson.Test",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj": {
-                "projectPath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj"
+              "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj": {
+    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj",
         "projectName": "ApiPerson",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Treinamento\\api-person\\ApiPerson\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
