@@ -45,6 +45,18 @@ namespace ApiPerson.Test
             _mockPersonService.Verify(Mock => Mock.FindByID(id), Times.Once());
             Assert.IsInstanceOf<OkObjectResult>(response);
         }
+        [Test]
+        public void TesteFindByIDQuandoGetPossuirParametrosEPessoaIgualANull()
+        {
+            // arrange
+            long id = 1;
+            Person person = null;
+            _mockPersonService.Setup(mock => mock.FindByID(id)).Returns(person);
+            // act 
+            var response = _personController.Get(id);
+            // assert
+            Assert.IsInstanceOf<NotFoundResult>(response);
+        }
 
         [Test]
         public void TestFindAllChamadaUmaVezQuandoGetNãoPossuirParametros()
@@ -87,6 +99,17 @@ namespace ApiPerson.Test
         }
 
         [Test]
+        public void TesteMetodoPostRetornandoBadResult()
+        {
+            // arrange
+            Person person = null;
+            // act
+            var response = _personController.Post(person);
+            // assert
+            Assert.IsInstanceOf<BadRequestResult>(response);
+        }
+
+        [Test]
         public void TesteUpdateChamaUmaVezQuandoUsarMetodoPut()
         {
             // arrange
@@ -102,6 +125,18 @@ namespace ApiPerson.Test
             // assert
             _mockPersonService.Verify(mock => mock.Update(person), Times.Once());
             Assert.IsInstanceOf<OkObjectResult>(response);
+        }
+
+
+        [Test]
+        public void TesteMetodoPutRetornandoBadRequest()
+        {
+            // arrange
+            Person person = null;
+            // act
+            var response = _personController.Put(person);
+            // assert
+            Assert.IsInstanceOf<BadRequestResult>(response);
         }
 
         [Test]
