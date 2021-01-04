@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using ApiPerson.Models.Context;
 using ApiPerson.Services.Implementations;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ApiPerson.Test
 {
@@ -139,8 +140,7 @@ namespace ApiPerson.Test
             Assert.IsInstanceOf<OkObjectResult>(response);
         }
 
-
-        [Test]
+            [Test]
         public void TesteMetodoPutRetornandoBadRequest()
         {
             // arrange
@@ -172,6 +172,7 @@ namespace ApiPerson.Test
             Assert.IsInstanceOf<NoContentResult>(response);
         }
 
+        [Test]
         public void TesteMetodoDeleteQuandoIdNaoExiste()
         {
             // arrange
