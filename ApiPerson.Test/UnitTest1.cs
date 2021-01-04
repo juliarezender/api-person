@@ -7,6 +7,7 @@ using NUnit.Framework;
 using Microsoft.AspNetCore.Mvc;
 using ApiPerson.Models.Context;
 using ApiPerson.Services.Implementations;
+using System.Collections.Generic;
 
 namespace ApiPerson.Test
 {
@@ -49,6 +50,7 @@ namespace ApiPerson.Test
         public void TestFindAllChamadaUmaVezQuandoGetNãoPossuirParametros()
         {
             // arrange
+            var listPerson = new List<Person>();
             var person = new Person
             {
                 Id = 1,
@@ -57,10 +59,13 @@ namespace ApiPerson.Test
                 Address = "Lagoa da Prata",
                 Gender = "Feminino"
             };
+            listPerson.Add(person);
+            _mockPersonService.Setup(mock => mock.FindAll()).Returns(listPerson);
             // act 
-            _personController.Get();
+            var response = _personController.Get();
             // assert
             _mockPersonService.Verify(Mock => Mock.FindAll(), Times.Once());
+            Assert.IsInstanceOf<OkObjectResult>(response);
         }
 
         [Test]
