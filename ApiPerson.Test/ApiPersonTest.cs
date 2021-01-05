@@ -9,6 +9,7 @@ using ApiPerson.Models.Context;
 using ApiPerson.Services.Implementations;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiPerson.Test
 {
@@ -18,12 +19,14 @@ namespace ApiPerson.Test
         private readonly ILogger<PersonController> _logger;
         private PersonController _personController;
         private Mock<IPersonService> _mockPersonService;
+        private PersonServiceImplementation personServiceImplementation;
 
         [SetUp]
         public void Setup()
         {
             _mockPersonService = new Mock<IPersonService>();
             _personController = new PersonController(_logger, _mockPersonService.Object);
+
         }
 
         [Test]
@@ -140,7 +143,53 @@ namespace ApiPerson.Test
             Assert.IsInstanceOf<OkObjectResult>(response);
         }
 
-            [Test]
+        [Test]
+        public void TesteRetornoQuandoUsarMetodoPut()
+        {
+            // arrange
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var person2 = new Person
+            {
+                Id = 2,
+                FirstName = "Gui",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            long id = 2;
+            
+            var mockContext = new Mock<PersonContext>();
+            var mockAlbumSet = MockDbSet(new List<Person> {person2});
+            mockContext.Setup(mock => mock.Persons).Returns(mockAlbumSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+
+            personServiceImplementation.Delete(id);
+            // act
+
+        }
+
+        public static Mock<DbSet<T>> MockDbSet<T>(List<T> inputDbSetContent) where T : class
+        {
+            var DbSetContent = inputDbSetContent.AsQueryable();
+            var dbSet = new Mock<DbSet<T>>();
+
+            dbSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(DbSetContent.Provider);
+            dbSet.As<IQueryable<T>>().Setup(m => m.Expression).Returns(DbSetContent.Expression);
+            dbSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(DbSetContent.ElementType);
+            dbSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(() => inputDbSetContent.GetEnumerator());
+            dbSet.Setup(m => m.Add(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Add(s));
+            dbSet.Setup(m => m.Remove(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Remove(s));
+            return dbSet;
+        }
+
+        [Test]
         public void TesteMetodoPutRetornandoBadRequest()
         {
             // arrange
