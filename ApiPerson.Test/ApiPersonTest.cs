@@ -10,6 +10,11 @@ using ApiPerson.Services.Implementations;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 
 namespace ApiPerson.Test
 {
@@ -303,15 +308,38 @@ namespace ApiPerson.Test
                 Gender = "Feminino"
             };
             var mockContext = new Mock<PersonContext>();
-            var mockPessoaSet = MockDbSet(new List<Person> { person1  });
+            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
             mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
             var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
-            mockContext.Setup(m => m.Entry(person1).CurrentValues.SetValues(person2));
+            mockContext.Setup(mock => mock.Add(person1)).Throws(new Exception());
 
             var newPerson = personServiceImplementation.Update(person1);
-
             // assert
             Assert.AreEqual(newPerson, person1);
+        }
+        [Test]
+        public void TesteExcecaoNoMetodoCreate()
+        {
+            // arrange
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+            
+            var excpt = mockContext.Setup(mock => mock.Add(person1)).Throws(new Exception());
+
+            // assert
+            Assert.Throws<Exception>(() => personServiceImplementation.Create(person1));
+
         }
     }
 }

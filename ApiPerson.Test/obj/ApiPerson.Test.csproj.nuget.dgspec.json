@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {}
+    "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {
+    "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
+        "projectUniqueName": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
         "projectName": "ApiPerson.Test",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson.Test\\obj\\",
+        "projectPath": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\ApiPerson.Test.csproj",
+        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson.Test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj": {
-                "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj"
+              "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj": {
+                "projectPath": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj"
               }
             }
           }
@@ -47,6 +44,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.Build.Tasks.Core": {
+              "target": "Package",
+              "version": "[16.8.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"
@@ -86,20 +91,17 @@
         }
       }
     },
-    "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj": {
+    "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj",
+        "projectUniqueName": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj",
         "projectName": "ApiPerson",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\ApiPerson.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\api-person\\ApiPerson\\obj\\",
+        "projectPath": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\ApiPerson.csproj",
+        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\julia\\Desktop\\Treinamento\\api-person\\ApiPerson\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
