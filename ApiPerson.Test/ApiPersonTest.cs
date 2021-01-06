@@ -144,52 +144,6 @@ namespace ApiPerson.Test
         }
 
         [Test]
-        public void TesteRetornoQuandoUsarMetodoPut()
-        {
-            // arrange
-            var person1 = new Person
-            {
-                Id = 1,
-                FirstName = "Julia",
-                LastName = "Rezende",
-                Address = "Lagoa da Prata",
-                Gender = "Feminino"
-            };
-            var person2 = new Person
-            {
-                Id = 2,
-                FirstName = "Gui",
-                LastName = "Rezende",
-                Address = "Lagoa da Prata",
-                Gender = "Feminino"
-            };
-            long id = 2;
-            
-            var mockContext = new Mock<PersonContext>();
-            var mockAlbumSet = MockDbSet(new List<Person> {person2});
-            mockContext.Setup(mock => mock.Persons).Returns(mockAlbumSet.Object);
-            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
-
-            personServiceImplementation.Delete(id);
-            // act
-
-        }
-
-        public static Mock<DbSet<T>> MockDbSet<T>(List<T> inputDbSetContent) where T : class
-        {
-            var DbSetContent = inputDbSetContent.AsQueryable();
-            var dbSet = new Mock<DbSet<T>>();
-
-            dbSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(DbSetContent.Provider);
-            dbSet.As<IQueryable<T>>().Setup(m => m.Expression).Returns(DbSetContent.Expression);
-            dbSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(DbSetContent.ElementType);
-            dbSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(() => inputDbSetContent.GetEnumerator());
-            dbSet.Setup(m => m.Add(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Add(s));
-            dbSet.Setup(m => m.Remove(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Remove(s));
-            return dbSet;
-        }
-
-        [Test]
         public void TesteMetodoPutRetornandoBadRequest()
         {
             // arrange
@@ -230,6 +184,134 @@ namespace ApiPerson.Test
             var response = _personController.Delete(id);
             // assert
             Assert.IsInstanceOf<NotFoundResult>(response);
+        }
+        public static Mock<DbSet<T>> MockDbSet<T>(List<T> inputDbSetContent) where T : class
+        {
+            var DbSetContent = inputDbSetContent.AsQueryable();
+            var dbSet = new Mock<DbSet<T>>();
+
+            dbSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(DbSetContent.Provider);
+            dbSet.As<IQueryable<T>>().Setup(m => m.Expression).Returns(DbSetContent.Expression);
+            dbSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(DbSetContent.ElementType);
+            dbSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(() => inputDbSetContent.GetEnumerator());
+            dbSet.Setup(m => m.Add(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Add(s));
+            dbSet.Setup(m => m.Remove(It.IsAny<T>())).Callback<T>((s) => inputDbSetContent.Remove(s));
+            return dbSet;
+        }
+
+        [Test]
+        public void TesteRetornoDoMetodoCreate()
+        {
+            // arrange
+            var person = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+            // act
+            var newPerson = personServiceImplementation.Create(person);
+
+            // assert
+            Assert.AreEqual(newPerson, person);
+        }
+
+        [Test]
+        public void TesteRetornoDoMetodoFindById()
+        {
+            // arrange
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+
+            var newPerson = personServiceImplementation.FindByID(person1.Id);
+
+            // assert
+            Assert.AreEqual(newPerson, person1);
+        }
+
+        [Test]
+        public void TesteRetornoDoMetodoFindAll()
+        {
+            // arrange
+
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var person2 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var listPerson = new List<Person>();
+            listPerson.Add(person1);
+            listPerson.Add(person2);
+
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1, person2 });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+
+            var newPersons = personServiceImplementation.FindAll();
+
+            // assert
+            Assert.AreEqual(newPersons, listPerson);
+        }
+        [Test]
+        public void TesteRetornoDoMetodoUpdate()
+        {
+            // arrange
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var person2 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1  });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+            mockContext.Setup(m => m.Entry(person1).CurrentValues.SetValues(person2));
+
+            var newPerson = personServiceImplementation.Update(person1);
+
+            // assert
+            Assert.AreEqual(newPerson, person1);
         }
     }
 }
