@@ -287,36 +287,7 @@ namespace ApiPerson.Test
             // assert
             Assert.AreEqual(newPersons, listPerson);
         }
-        [Test]
-        public void TesteRetornoDoMetodoUpdate()
-        {
-            // arrange
-            var person1 = new Person
-            {
-                Id = 1,
-                FirstName = "Julia",
-                LastName = "Rezende",
-                Address = "Lagoa da Prata",
-                Gender = "Feminino"
-            };
-            var person2 = new Person
-            {
-                Id = 1,
-                FirstName = "Julia",
-                LastName = "Rezende",
-                Address = "Lagoa da Prata",
-                Gender = "Feminino"
-            };
-            var mockContext = new Mock<PersonContext>();
-            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
-            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
-            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
-            mockContext.Setup(mock => mock.Add(person1)).Throws(new Exception());
 
-            var newPerson = personServiceImplementation.Update(person1);
-            // assert
-            Assert.AreEqual(newPerson, person1);
-        }
         [Test]
         public void TesteExcecaoNoMetodoCreate()
         {
@@ -331,15 +302,62 @@ namespace ApiPerson.Test
             };
 
             var mockContext = new Mock<PersonContext>();
-            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
+            var mockPessoaSet = MockDbSet(new List<Person> {  });
             mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
             var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
             
-            var excpt = mockContext.Setup(mock => mock.Add(person1)).Throws(new Exception());
+            mockContext.Setup(mock => mock.Add(person1)).Throws(new Exception());
 
             // assert
             Assert.Throws<Exception>(() => personServiceImplementation.Create(person1));
+        }
 
+        [Test]
+        public void TesteExcecaoNoMetodoDelete()
+        {
+            // arrange
+            long id = 1;
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+
+            mockContext.Setup(mock => mock.Remove(person1)).Throws(new Exception());
+
+            // assert
+            Assert.Throws<Exception>(() => personServiceImplementation.Delete(id));
+        }
+
+        [Test]
+        public void TesteExcecaoNoMetodoUpdate()
+        {
+            // arrange
+            long id = 1;
+            var person1 = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> { person1 });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+
+            mockContext.Setup(mock => mock.Entry(person1)).Throws(new Exception());
+
+            // assert
+            Assert.Throws<Exception>(() => personServiceImplementation.Update(person1));
         }
     }
 }
