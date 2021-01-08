@@ -229,6 +229,30 @@ namespace ApiPerson.Test
         }
 
         [Test]
+        public void TesteRetornoDoMetodoUpdate()
+        {
+            // arrange
+            var person = new Person
+            {
+                Id = 1,
+                FirstName = "Julia",
+                LastName = "Rezende",
+                Address = "Lagoa da Prata",
+                Gender = "Feminino"
+            };
+
+            var mockContext = new Mock<PersonContext>();
+            var mockPessoaSet = MockDbSet(new List<Person> {  });
+            mockContext.Setup(mock => mock.Persons).Returns(mockPessoaSet.Object);
+            var personServiceImplementation = new PersonServiceImplementation(mockContext.Object);
+            // act
+            var newPerson = personServiceImplementation.Update(person);
+
+            // assert
+            Assert.AreEqual(newPerson, person);
+        }
+
+        [Test]
         public void TesteRetornoDoMetodoFindById()
         {
             // arrange
