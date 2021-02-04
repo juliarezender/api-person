@@ -36,8 +36,17 @@ namespace ApiPerson.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Person person)
         {
-            if (person == null) return BadRequest();
-            return Ok(_personService.Create(person));
+            try 
+            {
+                if (person == null) return BadRequest();
+                return Ok(_personService.Create(person));
+            }
+
+            catch
+            {
+                return new StatusCodeResult(500);
+            }
+                
         }
 
         [HttpPut]

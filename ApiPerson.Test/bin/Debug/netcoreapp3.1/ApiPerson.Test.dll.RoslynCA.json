@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "3.8.0.0",
+        "fileVersion": "3.8.0-5.20570.14 (6559f38c)",
+        "semanticVersion": "3.8.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "CS0219",
+          "level": "warning",
+          "message": "A variável \"id\" é atribuída, mas seu valor nunca é usado",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/julia/Desktop/Treinamento/api-person/ApiPerson.Test/ApiPersonTest.cs",
+                "region": {
+                  "startLine": 367,
+                  "startColumn": 18,
+                  "endLine": 367,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "O campo \"Tests.personServiceImplementation\" nunca é usado",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/julia/Desktop/Treinamento/api-person/ApiPerson.Test/ApiPersonTest.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 45,
+                  "endLine": 27,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CS0649",
+          "level": "warning",
+          "message": "Campo \"Tests._logger\" nunca é atribuído e sempre terá seu valor padrão null",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/julia/Desktop/Treinamento/api-person/ApiPerson.Test/ApiPersonTest.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 52,
+                  "endLine": 24,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 4
+          }
+        }
+      ],
+      "rules": {
+        "CS0169": {
+          "id": "CS0169",
+          "shortDescription": "O campo nunca é usado",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS0219": {
+          "id": "CS0219",
+          "shortDescription": "A variável é atribuída, mas seu valor nunca é usado",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS0649": {
+          "id": "CS0649",
+          "shortDescription": "O campo nunca é atribuído e sempre terá seu valor padrão",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
