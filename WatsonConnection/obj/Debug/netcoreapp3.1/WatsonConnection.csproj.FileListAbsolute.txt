@@ -1,0 +1,9 @@
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\bin\Debug\netcoreapp3.1\WatsonConnection.deps.json
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\bin\Debug\netcoreapp3.1\WatsonConnection.dll
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\bin\Debug\netcoreapp3.1\WatsonConnection.pdb
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.csprojAssemblyReference.cache
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.AssemblyInfoInputs.cache
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.AssemblyInfo.cs
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.csproj.CoreCompileInputs.cache
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.dll
+C:\Users\julia\Desktop\Treinamento\api-person\WatsonConnection\obj\Debug\netcoreapp3.1\WatsonConnection.pdb

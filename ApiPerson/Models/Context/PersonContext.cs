@@ -7,7 +7,10 @@ namespace ApiPerson.Models.Context
         public PersonContext(DbContextOptions<PersonContext> options) : base(options)
         {
         }
+        public PersonContext() : base()
+        {
+        }
 
-        public DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
     }
 }

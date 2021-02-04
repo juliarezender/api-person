@@ -1,0 +1,6 @@
+projectKey=ApiPerson
+serverUrl=http://localhost:9000
+serverVersion=7.6.0.21501
+dashboardUrl=http://localhost:9000/dashboard?id=ApiPerson
+ceTaskId=AXds7b40JVK9JIEJKGvt
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXds7b40JVK9JIEJKGvt

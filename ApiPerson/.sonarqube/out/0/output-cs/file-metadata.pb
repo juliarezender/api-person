@@ -1,0 +1,10 @@
+Y
+WC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Controllers\PersonController.csY
+WC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Models\Context\PersonContext.csJ
+HC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Models\Person.csD
+BC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Program.csq
+oC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Services\Implementations\PersonServiceImplementation.csT
+RC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Services\IPersonService.csD
+BC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\Startup.cs‚
+~C:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.csm
+iC:\Users\julia\Desktop\Treinamento\api-person\ApiPerson\obj\Debug\netcoreapp3.1\ApiPerson.AssemblyInfo.cs
